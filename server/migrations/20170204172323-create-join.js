@@ -9,11 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INT
+        type: Sequelize.INTEGER
       },
       trip_id: {
-        type: Sequelize.INT
-      },
+        type: Sequelize.INTEGER
+      }
     });
   },
   down: function(queryInterface, Sequelize) {
