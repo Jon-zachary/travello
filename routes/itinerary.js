@@ -7,6 +7,7 @@ router.get('/', function(req,res,next){
   models.Itinerary.findAll({}).then(function(itinerary){
     res.render('itinerary/itinerary', {
       content: itinerary.content,
+      id: itinerary.id,
       itinerary: itinerary
     })
   })
@@ -20,6 +21,13 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.delete('/:id', function(req, res, next) {
+  models.Itinerary.destroy({
+    where: { id: req.params.id }
+  }).then(function(user) {
+    res.redirect('/itinerary');
+  });
+});
 
 
 

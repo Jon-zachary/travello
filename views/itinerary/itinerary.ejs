@@ -10,6 +10,9 @@
  <ul>
       <div>
          <li><%= itinerary.content %></li>
+        <form method="POST" action="<%= `/itinerary/${itinerary.id}/?_method=DELETE` %>">
+            <button>X</button>
+        </form>
       </div>
       </ul>
  <% }) %>
