@@ -35,6 +35,14 @@ router.get('/:id/edit', function(req, res, next) {
   });
 });
 
+router.put('/:id', function(req, res, next) {
+  models.Itinerary.update({
+    content: req.body.content
+  }, { where: { id: req.params.id } }).then(function() {
+    res.redirect('/itinerary');
+  });
+});
+
 
 
 module.exports = router;
