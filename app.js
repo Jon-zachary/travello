@@ -5,10 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const session = require('express-session');
+const passport = require('passport');
+
+const index = require('./routes/index');
+const users = require('./routes/users');
+const auth = require('./routes/auth');
+
+const app = express();
+
+// load environment variables
 require('dotenv').config();
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +26,13 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -29,7 +43,9 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/auth', auth);
 app.use('/users', users);
+// app.use('/trips', trips);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
