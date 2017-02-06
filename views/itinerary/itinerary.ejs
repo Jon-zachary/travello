@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+ <% itinerary.forEach(function(itinerary) { %>
+ <ul>
+      <div>
+         <li><%= itinerary.content %></li>
+        <form method="POST" action="<%= `/itinerary/${itinerary.id}/?_method=DELETE` %>">
+            <button>X</button>
+        </form>
+      </div>
+      </ul>
+ <% }) %>
+
+<form method="POST" action="/itinerary">
+<label> Message
+  <input type ="text" name="content">
+</label>
+<button>What do you have to say?</button>
+</form>
+
+  </body>
+</html>

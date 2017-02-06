@@ -4,9 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 var trips = require('./routes/trips');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var itinerary = require('./routes/itinerary');
 require('dotenv').config();
 var app = express();
 
@@ -27,10 +29,12 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/trips', trips);
+app.use('/itinerary', itinerary);
 
 
 // catch 404 and forward to error handler
