@@ -8,7 +8,7 @@
   <ul>
   <% trips.forEach(function(trips) { %>
     <div>
-    <li><%= `${trips.tripname}:`%>
+    <a href="<%= `itinerary/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
       <%= trips.description%>
         <form  action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
             <button>X</button>

@@ -26,6 +26,8 @@ router.post('/', function(req, res, next) {
 });
 
 
+
+
 router.delete('/:id', function(req, res, next){
   models.Trip.destroy({
     where: {id: req.params.id}
