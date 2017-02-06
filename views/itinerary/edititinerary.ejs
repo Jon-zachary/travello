@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+<form method="POST" action="<%= `/itinerary/?_method=PUT` %>">
+<label> Edit your message
+  <input type ="text" name="content" placeholder="<%= itinerary.content%>">
+</label>
+<button>X</button>
+</form>
+
+  </body>
+</html>

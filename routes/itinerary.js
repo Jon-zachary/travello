@@ -24,11 +24,16 @@ router.post('/', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   models.Itinerary.destroy({
     where: { id: req.params.id }
-  }).then(function(user) {
+  }).then(function(itinerary) {
     res.redirect('/itinerary');
   });
 });
 
+router.get('/:id/edit', function(req, res, next) {
+  models.Itinerary.findById(req.params.id).then(function(itinerary) {
+    res.render('itinerary/edititinerary', { itinerary: itinerary });
+  });
+});
 
 
 
