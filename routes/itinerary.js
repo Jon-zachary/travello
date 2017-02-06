@@ -17,7 +17,8 @@ router.get('/:id', function(req,res,next) {
 
 router.post('/', function(req, res, next) {
   models.Itinerary.create({
-    content: req.body.content
+    content: req.body.content,
+    tripid: req.body.tripid
   }).then(function() {
     res.redirect('itinerary')
   });
