@@ -1,25 +1,30 @@
 'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('Itineraries', {
-      itinerary_id: {
+    return queryInterface.createTable('Joins', {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
+      userid: {
         type: Sequelize.INTEGER
       },
-      trip_id: {
+      tripid: {
         type: Sequelize.INTEGER
       },
-      content: {
-        type: Sequelize.TEXT
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE
       }
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('Itineraries');
+    return queryInterface.dropTable('Joins');
   }
 };

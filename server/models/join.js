@@ -1,8 +1,8 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Join = sequelize.define('Join', {
-    user_id: DataTypes.INTEGER,
-    trip_id: DataTypes.INTEGER
+    userid: DataTypes.INTEGER,
+    tripid: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

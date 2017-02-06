@@ -2,7 +2,7 @@
 module.exports = {
   up: function(queryInterface, Sequelize) {
     return queryInterface.createTable('Users', {
-      user_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -11,14 +11,19 @@ module.exports = {
       username: {
         type: Sequelize.STRING(32)
       },
+      password: {
+        type: Sequelize.TEXT
+      },
       email: {
         type: Sequelize.STRING(128)
       },
-      user_password: {
-        type: Sequelize.STRING(128)
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE
       },
-      user_image: {
-        type: Sequelize.STRING(128)
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE
       }
     });
   },
