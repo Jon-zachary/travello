@@ -20,13 +20,12 @@ router.post('/', function(req, res, next) {
       models.Trip.create({
         title:'Trips',
         tripname:req.body.tripname,
-        password: req.body.password,     //is password necesscery
+        password: req.body.password,     
         description: req.body.description 
-}).then(res.redirect('/'));
+}).then(res.redirect('/trips'));
 });
 
- // DELETE from Trips page. 
-
+ 
 router.delete('/:id', function(req, res, next){
   models.Trip.destroy({
     where: {id: req.params.id}
@@ -35,4 +34,18 @@ router.delete('/:id', function(req, res, next){
   });
 });
 
+
+router.get('/:id/edit', function(req, res, next) {
+  models.Trip.findById(req.params.id).then(function(trips) {
+    res.render('trips/edittrips', { trips: trips });
+  });
+});
+
+router.put('/:id', function(req, res, next) {
+  models.Trip.update({
+    tripname: req.body.tripname,
+  }, { where: { id: req.params.id } }).then(function() {
+    res.redirect('/trips');
+  });
+});
 module.exports = router;

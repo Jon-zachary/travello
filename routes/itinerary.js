@@ -21,7 +21,6 @@ router.post('/', function(req, res, next) {
   });
 });
 
-
 router.delete('/:id', function(req, res, next) {
   models.Itinerary.destroy({
     where: { id: req.params.id }
@@ -30,6 +29,19 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
+router.get('/:id/edit', function(req, res, next) {
+  models.Itinerary.findById(req.params.id).then(function(itinerary) {
+    res.render('itinerary/edititinerary', { itinerary: itinerary });
+  });
+});
+
+router.put('/:id', function(req, res, next) {
+  models.Itinerary.update({
+    content: req.body.content
+  }, { where: { id: req.params.id } }).then(function() {
+    res.redirect('/itinerary');
+  });
+});
 
 
 

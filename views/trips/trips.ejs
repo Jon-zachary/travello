@@ -2,16 +2,15 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
   <ul>
   <% trips.forEach(function(trips) { %>
   	<div>
-  	<li><%= `${trips.tripname}:`%>
+  	<li><a href="#"><%= `${trips.tripname}:`%></a>
   		<%= trips.description%>
   		  <form  action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
-            <button>X</button>
+            <button>DELETE</button>
         </form>
   	</li>
   	</div>
