@@ -13,6 +13,18 @@ router.get('/', function(req,res,next){
   });
 });
 
+router.get('/:id', function(req,res,next) {
+  models.Itinerary.findAll({where:{tripid:req.params.id}})
+  .then(function(itinerary){
+    res.render('itinerary/itinerary', {
+      content: itinerary.content,
+      id: itinerary.id,
+      itinerary: itinerary
+    });
+  });
+});
+
+
 router.post('/', function(req, res, next) {
   models.Itinerary.create({
     content: req.body.content
