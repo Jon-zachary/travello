@@ -4,7 +4,7 @@ var models = require('../server/models/index');
 /* GET home page. */
 
 router.get('/', function(req,res,next){
-  models.Itinerary.findAll({}).then(function(itinerary){
+  models.Itinerary.findAll({where: {id: 2}}).then(function(itinerary){
     res.render('itinerary/itinerary', {
       content: itinerary.content,
       id: itinerary.id,
@@ -12,6 +12,7 @@ router.get('/', function(req,res,next){
     })
   })
 });
+
 
 router.post('/', function(req, res, next) {
   models.Itinerary.create({

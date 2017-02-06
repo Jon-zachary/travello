@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <ul>
+  <% trips.forEach(function(trips) { %>
+    <div>
+    <li><%= `${trips.tripname}:`%>
+      <%= trips.description%>
+        <form  action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
+            <button>X</button>
+        </form>
+        <a href= " <%= `trips/${trips.id}/edit`%>  ">edit</a>
+    </li>
+    </div>
+  <% }) %>
+  </ul>
+  <a href="trips/new">Create a new trip</a>
+  </body>
+</html>

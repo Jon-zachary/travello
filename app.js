@@ -9,7 +9,7 @@ var methodOverride = require('method-override');
 var itinerary = require('./routes/itinerary')
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var trips = require('./routes/trips');
 
 require('dotenv').config();
 var app = express();
@@ -37,6 +37,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/itinerary', itinerary)
 
+app.use('/trips', trips);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
