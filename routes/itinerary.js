@@ -9,10 +9,16 @@ router.get('/', function(req,res,next){
       content: itinerary.content,
       itinerary: itinerary
     })
-
   })
+});
 
-})
+router.post('/', function(req, res, next) {
+  models.Itinerary.create({
+    content: req.body.content
+  }).then(function() {
+    res.redirect('itinerary')
+  });
+});
 
 
 

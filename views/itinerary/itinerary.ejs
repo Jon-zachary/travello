@@ -7,10 +7,19 @@
   <body>
 
  <% itinerary.forEach(function(itinerary) { %>
+ <ul>
       <div>
          <li><%= itinerary.content %></li>
       </div>
+      </ul>
  <% }) %>
+
+<form method="POST" action="/itinerary">
+<label> Message
+  <input type ="text" name="content">
+</label>
+<button>What do you have to say?</button>
+</form>
 
   </body>
 </html>
