@@ -1,9 +1,9 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Trip = sequelize.define('Trip', {
-    trip_name: DataTypes.STRING,
-    trip_description: DataTypes.STRING,
-    password: DataTypes.STRING
+    tripname: DataTypes.STRING(32),
+    password: DataTypes.TEXT,
+    description: DataTypes.STRING(128)
   }, {
     classMethods: {
       associate: function(models) {

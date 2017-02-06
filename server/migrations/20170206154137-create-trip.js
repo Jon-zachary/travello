@@ -2,20 +2,28 @@
 module.exports = {
   up: function(queryInterface, Sequelize) {
     return queryInterface.createTable('Trips', {
-      trip_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      trip_name: {
-        type: Sequelize.STRING
-      },
-      trip_description: {
-        type: Sequelize.STRING
+      tripname: {
+        type: Sequelize.STRING(32)
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
+      },
+      description: {
+        type: Sequelize.STRING(128)
+      },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE
       }
     });
   },
