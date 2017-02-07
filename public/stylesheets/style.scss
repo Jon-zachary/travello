@@ -1,7 +1,4 @@
 
-@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Pacifico");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @mixin flex {
@@ -11,35 +8,6 @@
 $border:  2px solid rgba(0, 0, 0, 0.47);
 $font : 'Pacifico', cursive;
 $bluefont:rgba(89, 156, 243, 0.98);
-
-
-html, body {
-  font: 25px "Lato";
-  max-width: 800px;
-  color: #E24E42;
-}
-body{
-  padding: 50px;
-  background-image:url("../images/travello_header.jpg");
-}
-a{
-  color:#E24E42;
-}
-.travello{
-  font-family:'Pacifico';
-  font-weight:700px;
-  color:#E24E42;
-}
-input.btn{
-  margin:0 5px;
-  width:2em;
-  height:5em;
-  font: 15px "Lato";
-  color:white;
-}
-#login{
-  width:128px;
-
 
 
 #tripbody{
@@ -121,5 +89,8 @@ background-color: rgba(0, 0, 0, 0);
   text-align: center;
   font-family: $font;
   color:black;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84cb5086fd5fa385015faedcbb2e8366a35b7792
 }
