@@ -1,0 +1,21 @@
+<%  
+  var url;
+  var text;
+  if (isLoggedIn === true) {
+    text = 'LOGOUT'; 
+    url = '/auth/logout';
+  }
+  else {
+    text = 'LOGIN'; 
+    url = "/auth/login";
+  }
+%>
+
+<div>
+  <form action="/auth/register" method="get">
+    <input type="submit" value="REGISTER"/>
+  </form>
+  <form action= <%= url %> method="get">
+    <input type="submit" value=<%= text %> />
+  </form>
+</div>
