@@ -6,6 +6,7 @@ var models = require('../server/models/index');
 router.get('/:id', function(req,res,next) {
   models.Itinerary.findAll({where:{tripid:req.params.id}})
   .then(function(itinerary){
+    console.log(itinerary)
     res.render('itinerary/itinerary', {
       content: itinerary.content,
       id: itinerary.id,
@@ -20,7 +21,7 @@ router.post('/', function(req, res, next) {
     content: req.body.content,
     tripid: req.body.tripid
   }).then(function() {
-    res.redirect('itinerary')
+    res.redirect('back')
   });
 });
 
@@ -28,7 +29,7 @@ router.delete('/:id', function(req, res, next) {
   models.Itinerary.destroy({
     where: { id: req.params.id }
   }).then(function(itinerary) {
-    res.redirect('/itinerary');
+    res.redirect('back');
   });
 });
 
@@ -42,7 +43,7 @@ router.put('/:id', function(req, res, next) {
   models.Itinerary.update({
     content: req.body.content
   }, { where: { id: req.params.id } }).then(function() {
-    res.redirect('/itinerary');
+    res.redirect(`/itinerary/${req.body.tripid}`);
   });
 });
 

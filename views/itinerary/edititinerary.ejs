@@ -9,6 +9,7 @@
 <form method="POST" action="<%= `/itinerary/${itinerary.id}/?_method=PUT` %>">
 <label> Edit your message
   <input type ="text" name="content" placeholder="<%= itinerary.content%>">
+  <input type="hidden" name="tripid" value="<%= itinerary.tripid%>">
 </label>
 <button>X</button>
 </form>
