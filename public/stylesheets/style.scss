@@ -2,23 +2,25 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-html, body {
+html, body#landing_pg {
   font: 25px "Lato";
   max-width: 800px;
   color: #E24E42;
 }
-body{
+body#landing_pg{
   padding: 50px;
   background-image:url("../images/travello_header.jpg");
 }
 a{
   color:#E24E42;
 }
+//Logo
 .travello{
   font-family:'Pacifico';
   font-weight:700px;
   color:#E24E42;
 }
+//Register and login
 input.btn{
   margin:0 5px;
   width:2em;
@@ -26,6 +28,13 @@ input.btn{
   font: 15px "Lato";
   color:white;
 }
+//login button on index
 #login{
   width:128px;
+}
+.container4Register{
+  padding-top: 200px;
+}
+.container4auth{
+
 }
