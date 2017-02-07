@@ -8,7 +8,11 @@ html, body#landing_pg {
 
 body#landing_pg {
   padding: 50px;
-  background-image: url("../images/travello_header.jpg"); }
+  background-image: url("../images/travello_header.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
 
 a {
   color: #E24E42; }
@@ -34,7 +38,11 @@ input.btn {
 #registerBody {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 65%), url("../images/Friends_Beach.jpg") no-repeat;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 65%), url("../images/Friends_Beach.jpg");
+  background-position: center center;
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover; }
 
 #registerBody, #loginBody {
