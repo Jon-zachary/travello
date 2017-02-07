@@ -4,9 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var methodOverride = require('method-override');
+var trips = require('./routes/trips');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var itinerary = require('./routes/itinerary');
+const session = require('express-session');
+const passport = require('passport');
+const auth = require('./routes/auth');
 require('dotenv').config();
 var app = express();
 
@@ -27,10 +32,17 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', index);
+app.use(methodOverride('_method'));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/users', users);
+app.use('/trips', trips);
+app.use('/itinerary', itinerary);
+app.use('/auth', auth);
 
+app.get('/',function(req,res,next){
+  res.render('./index',{title:'Travello',isLoggedIn:false});
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
