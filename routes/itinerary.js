@@ -17,7 +17,7 @@ router.get('/:id', function(req,res,next) {
     res.render('itinerary/itinerary', {
       itinerary: itinerary,
       index: req.params.id,
-      id: itinerary.id
+      id: itinerary.id,
     });
   });
 });
@@ -37,7 +37,7 @@ router.delete('/:id', function(req, res, next) {
   models.Itinerary.destroy({
     where: { id: req.params.id }
   }).then(function(itinerary) {
-    res.redirect('/itinerary');
+    res.redirect('back');
   });
 });
 
