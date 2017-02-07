@@ -2,22 +2,39 @@
 <html>
   <head>
     <title></title>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+
   </head>
-  <body>
-<ul>
+  <body id="itinerarybody">
+<a href="/trips"><h1 id="itintitle">Itinerary</h1></a>
+<div class="opaque tripmaker">
+ <ul class="center">
  <% itinerary.forEach(function(itinerary) { %>
-         <li><%= itinerary.content %>
-        <form method="POST" action="<%= `/itinerary/${itinerary.id}/?_method=DELETE` %>">
-            <button>X</button>
+
+      <div >
+         <li><%= itinerary.content %></li>
+        <form method="POST" action="<%= `/itinerary/trip/${itinerary.id}/?_method=DELETE` %>">
+            <button  class="delete">X</button>
         </form>
-        </li>
-</ul>
+        <a href= " <%= `${itinerary.id}/edit`%>  ">edit</a>
+      </div>
+
  <% }) %>
-<form method="POST" action="<%= `/itinerary/${index}` %>">
+ </ul>
+</div>
+
+<form method="POST" action="<%= `/itinerary/trip/${index}` %>">
 <label> Message
   <input type ="text" name="content">
 </label>
-<button>What do you have to say?</button>
+<button class="waves-effect waves-light btn">Submit</button>
 </form>
+
   </body>
 </html>

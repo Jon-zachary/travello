@@ -1,6 +1,17 @@
+
 @import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Pacifico");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+}
+$border:  2px solid rgba(0, 0, 0, 0.47);
+$font : 'Pacifico', cursive;
+$bluefont:rgba(89, 156, 243, 0.98);
+
 
 html, body {
   font: 25px "Lato";
@@ -28,4 +39,87 @@ input.btn{
 }
 #login{
   width:128px;
+
+
+
+#tripbody{
+  background-image: url('images/groupbg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#itinerarybody{
+background-image: url('images/beach12bg.jpg');
+background-size: cover;
+}
+
+.title {
+font-family: $font;
+color: white;
+font-size: 50pt;
+transition: .5s;
+}
+
+.title:hover {
+  color: rgba(92, 171, 224, 0.9);
+}
+
+.create {
+  font-family: $font;
+  font-size: 30pt;
+  color: black;
+  display: inline-block;
+padding: 5px;
+box-shadow: 5px 5px 5px #888888;
+transition: 1s;
+}
+
+.create:hover{
+  box-shadow: 10px 10px 10px #888888;
+}
+
+.opaque {
+width: 90%;
+border-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.32);
+    justify-content: center;
+}
+
+.tripmaker {
+  @include flex;
+    align-items: center;
+}
+
+.center {
+@include flex;
+}
+
+.container {
+ border-bottom: 1px solid black;
+ .tripname {
+    color: black;
+    font-family: courier, bold oblique;
+    font-size: 20pt;
+    transition: .5s
+
+  }
+  p{
+    font-family: courier;
+
+  }
+}
+.tripname:hover{
+color: $bluefont;
+}
+
+
+.delete {
+border: none;
+background-color: rgba(0, 0, 0, 0);
+}
+#itintitle {
+  text-align: center;
+  font-family: $font;
+  color:black;
+
 }
