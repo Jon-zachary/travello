@@ -35,12 +35,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use('/', index);
 app.use('/users', users);
 app.use('/trips', trips);
 app.use('/itinerary', itinerary);
 app.use('/auth', auth);
 
+app.get('/',function(req,res,next){
+  res.render('./index',{title:'Travello',isLoggedIn:false});
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
