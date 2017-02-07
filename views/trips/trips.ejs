@@ -2,26 +2,29 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-  </head>
-  <body>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+</head>
+<body id="tripbody">
+     <a class="title ">Travello</a>
+     <div class="tripmaker">
+      <a href="trips/new" class="create" >Create a trip</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
 
-  <ul class="collapsible" data-collapsible="accordion">
+
+
+<div class="opaque">
+  <ul class="center">
   <% trips.forEach(function(trips) { %>
-    <div>
-    <a href="<%= `itinerary/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
-      <%= trips.description%>
-        <div class="row">
-          <form action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
-              <button>X</button>
-          </form>
-        </div>
-        <a  class="waves-effect waves-light btn secondary-content" href= " <%= `trips/${trips.id}/edit`%>  ">edit</a>
-    </li>
+    <div class="container">
+    <a class="tripname" href="<%= `itinerary/trip/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
+      <p class="descrip"><%= trips.description%></p>
     </div>
   <% }) %>
   </ul>
-  <a class="waves-effect waves-light btn secondary-content" id="createBtn" href="trips/new">Create a new trip</a>
-    <% include ../partials/footer %>
+</div>
+</div>
   </body>
 </html>

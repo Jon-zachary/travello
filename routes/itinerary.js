@@ -3,37 +3,31 @@ var router = express.Router();
 var models = require('../server/models/index');
 /* GET home page. */
 
-router.get('/', function(req,res,next){
-  models.Itinerary.findAll({}).then(function(itinerary){
-    res.render('itinerary/itinerary', {
-      itinerary: itinerary
-    });
-  });
-});
-
-router.get('/:id', function(req,res,next) {
+router.get('/trip/:id', function(req,res,next) {
   models.Itinerary.findAll({where:{tripid:req.params.id}})
   .then(function(itinerary){
+    console.log(itinerary)
     res.render('itinerary/itinerary', {
+      content: itinerary.content,
+      id: itinerary.id,
       itinerary: itinerary,
       index: req.params.id,
-      id: itinerary.id,
     });
   });
 });
 
 
-router.post('/:id', function(req, res, next) {
+router.post('/trip/:id', function(req, res, next) {
   models.Itinerary.create({
     content: req.body.content,
     tripid:req.params.id
   }).then(function() {
-    res.redirect(`/itinerary/${req.params.id}`);
+    res.redirect(`/itinerary/trip/${req.params.id}`);
   });
 });
 
 
-router.delete('/:id', function(req, res, next) {
+router.delete('/trip/:id', function(req, res, next) {
   models.Itinerary.destroy({
     where: { id: req.params.id }
   }).then(function(itinerary) {
@@ -41,17 +35,17 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
-router.get('/:id/edit', function(req, res, next) {
+router.get('/trip/:id/edit', function(req, res, next) {
   models.Itinerary.findById(req.params.id).then(function(itinerary) {
     res.render('itinerary/edititinerary', { itinerary: itinerary });
   });
 });
 
-router.put('/:id', function(req, res, next) {
+router.put('/trip/:id', function(req, res, next) {
   models.Itinerary.update({
     content: req.body.content
   }, { where: { id: req.params.id } }).then(function() {
-    res.redirect('/itinerary');
+    res.redirect(`/itinerary/trip/${req.body.tripid}`);
   });
 });
 
