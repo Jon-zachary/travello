@@ -28,7 +28,13 @@ input.btn {
 #login {
   width: 128px; }
 
-.container4Register {
+.container4Register, .loginContainer {
   padding-top: 200px; }
+
+#registerBody, #loginBody {
+  display: flex; }
+
+.registerMain, .loginMain {
+  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
