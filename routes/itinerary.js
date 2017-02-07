@@ -10,20 +10,22 @@ router.get('/:id', function(req,res,next) {
     res.render('itinerary/itinerary', {
       content: itinerary.content,
       id: itinerary.id,
-      itinerary: itinerary
+      itinerary: itinerary,
+      index: req.params.id,
     });
   });
 });
 
 
-router.post('/', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
   models.Itinerary.create({
     content: req.body.content,
-    tripid: req.body.tripid
+    tripid:req.params.id
   }).then(function() {
-    res.redirect('back')
+    res.redirect(`/itinerary/${req.params.id}`);
   });
 });
+
 
 router.delete('/:id', function(req, res, next) {
   models.Itinerary.destroy({

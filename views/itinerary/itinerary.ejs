@@ -2,31 +2,22 @@
 <html>
   <head>
     <title></title>
-
   </head>
   <body>
-
+<ul>
  <% itinerary.forEach(function(itinerary) { %>
- <ul>
-      <div>
-         <li><%= itinerary.content %></li>
+         <li><%= itinerary.content %>
         <form method="POST" action="<%= `/itinerary/${itinerary.id}/?_method=DELETE` %>">
             <button>X</button>
         </form>
-        <a href= " <%= `${itinerary.id}/edit`%>  ">edit</a>
-      </div>
-      </ul>
+        </li>
+</ul>
  <% }) %>
-
-<form method="POST" action="/itinerary">
+<form method="POST" action="<%= `/itinerary/${index}` %>">
 <label> Message
-  <input type ="text" name="content" placeholder="message">
-</label>
-<label>
-<input type="text" name="tripid" placeholder="which trip">
+  <input type ="text" name="content">
 </label>
 <button>What do you have to say?</button>
 </form>
-
   </body>
 </html>
