@@ -6,8 +6,6 @@ var models = require('../server/models/index');
 router.get('/', function(req,res,next){
   models.Itinerary.findAll({}).then(function(itinerary){
     res.render('itinerary/itinerary', {
-      content: itinerary.content,
-      id: itinerary.id,
       itinerary: itinerary
     });
   });
@@ -17,21 +15,23 @@ router.get('/:id', function(req,res,next) {
   models.Itinerary.findAll({where:{tripid:req.params.id}})
   .then(function(itinerary){
     res.render('itinerary/itinerary', {
-      content: itinerary.content,
-      id: itinerary.id,
-      itinerary: itinerary
+      itinerary: itinerary,
+      index: req.params.id,
+      id: itinerary.id
     });
   });
 });
 
 
-router.post('/', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
   models.Itinerary.create({
-    content: req.body.content
+    content: req.body.content,
+    tripid:req.params.id
   }).then(function() {
-    res.redirect('itinerary');
+    res.redirect(`/itinerary/${req.params.id}`);
   });
 });
+
 
 router.delete('/:id', function(req, res, next) {
   models.Itinerary.destroy({

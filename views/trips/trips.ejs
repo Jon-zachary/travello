@@ -6,14 +6,15 @@
   <body>
   <ul>
   <% trips.forEach(function(trips) { %>
-  	<div>
-  	<li><a href="#"><%= `${trips.tripname}:`%></a>
-  		<%= trips.description%>
-  		  <form  action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
-            <button>DELETE</button>
+    <div>
+    <a href="<%= `itinerary/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
+      <%= trips.description%>
+        <form  action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
+            <button>X</button>
         </form>
-  	</li>
-  	</div>
+        <a href= " <%= `trips/${trips.id}/edit`%>  ">edit</a>
+    </li>
+    </div>
   <% }) %>
   </ul>
   <a href="trips/new">Create a new trip</a>
