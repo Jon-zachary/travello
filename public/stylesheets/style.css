@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 body {
   background-image: url("images/groupbg.jpg");
   background-size: cover;
@@ -17,7 +18,13 @@ body {
   font-family: "Pacifico", cursive;
   font-size: 30pt;
   color: black;
-  display: inline-block; }
+  display: inline-block;
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  transition: 1s; }
+
+.create:hover {
+  box-shadow: 10px 10px 10px #888888; }
 
 .opaque {
   width: 500px;
@@ -33,8 +40,26 @@ body {
   display: flex;
   flex-direction: column; }
 
+.container {
+  border-bottom: 1px solid black; }
+  .container .tripname {
+    color: black;
+    font-family: courier, bold oblique;
+    font-size: 20pt;
+    color: white;
+    transition: .5s; }
+  .container p {
+    font-family: courier; }
+
+.tripname:hover {
+  color: rgba(92, 171, 224, 0.9); }
+
 .delete {
   border: none;
   background-color: transparent; }
+
+h1 {
+  text-align: center;
+  font-family: "Pacifico", cursive; }
 
 /*# sourceMappingURL=style.css.map */

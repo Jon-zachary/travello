@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
-$font : 'Pacifico', cursive;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 @mixin flex {
   display: flex;
   flex-direction: column;
 }
+$border:  2px solid rgba(0, 0, 0, 0.47);
+$font : 'Pacifico', cursive;
+$bluefont:rgba(92, 171, 224, 0.9);
+
 
 body{
   background-image: url('images/groupbg.jpg');
@@ -28,6 +32,13 @@ transition: .5s;
   font-size: 30pt;
   color: black;
   display: inline-block;
+padding: 5px;
+box-shadow: 5px 5px 5px #888888;
+transition: 1s;
+}
+
+.create:hover{
+  box-shadow: 10px 10px 10px #888888;
 }
 
 .opaque {
@@ -45,12 +56,31 @@ width: 500px;
 @include flex;
 }
 
+.container {
+ border-bottom: 1px solid black;
+ .tripname {
+    color: black;
+    font-family: courier, bold oblique;
+    font-size: 20pt;
+    color: white;
+    transition: .5s
+
+  }
+  p{
+    font-family: courier;
+
+  }
+}
+.tripname:hover{
+color: $bluefont;
+}
+
+
 .delete {
 border: none;
 background-color: rgba(0, 0, 0, 0);
 }
-
-.tripname {
-
-
+h1 {
+  text-align: center;
+  font-family: $font;
 }

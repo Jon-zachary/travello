@@ -12,16 +12,16 @@
 
   </head>
   <body>
-
+<h1>Itinerary</h1>
 
  <% itinerary.forEach(function(itinerary) { %>
  <ul>
       <div>
          <li><%= itinerary.content %></li>
         <form method="POST" action="<%= `/itinerary/trip/${itinerary.id}/?_method=DELETE` %>">
-            <button  class="delete"></i>delete</button>
+            <button  class="delete">X</button>
         </form>
-        <a href= " <%= `trip/${itinerary.id}/edit`%>  ">edit</a>
+        <a href= " <%= `${itinerary.id}/edit`%>  ">edit</a>
       </div>
       </ul>
  <% }) %>
