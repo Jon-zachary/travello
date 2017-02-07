@@ -17,7 +17,7 @@ router.post('/register', (req, res, next)  => {
     req.login(user, (err) => {
       if (err) return next(err);
 
-      res.render('index', { isLoggedIn : true,title:'foobar' });
+      res.redirect('./login');
     });
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });
