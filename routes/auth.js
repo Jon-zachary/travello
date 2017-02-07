@@ -7,7 +7,8 @@ const passport = require('../auth/local');
 
 router.get('/register', function (req, res) {
   res.render('auth/register')
-})
+});
+
 
 // redirect user if they attempt login and are already logged in
 router.post('/register', (req, res, next)  => {
@@ -16,7 +17,7 @@ router.post('/register', (req, res, next)  => {
     req.login(user, (err) => {
       if (err) return next(err);
 
-      res.redirect('/');
+      res.render('index', { isLoggedIn : true });
     });
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });
@@ -29,7 +30,7 @@ router.get('/login', authHelpers.loginRedirect, (req, res)=> {
 
 // local strategy authentication
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/users',
+    successRedirect: '/test',
     failureRedirect: '/auth/login',
     failureFlash: true
   })
@@ -38,7 +39,7 @@ router.post('/login', passport.authenticate('local', {
 // user logout, redirect to landing
 router.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/user/index');
+  res.redirect('/');
 });
 
 module.exports = router;

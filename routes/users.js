@@ -4,8 +4,8 @@ const authHelpers = require('../auth/auth-helpers');
 
 /* GET users listing. */
 router.get('/', authHelpers.loginRequired, (req, res, next) => {
-  res.render('user/index', {
-    user: req.user.dataValues,
+  res.render('/test', { //TODO: Change test to trips
+    //user: req.user.dataValues,
     title: 'User Page'
   });
 });
