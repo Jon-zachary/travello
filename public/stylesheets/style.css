@@ -1,3 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 body {
-  background-color: red;
-}
+  background-image: url("images/groupbg.jpg");
+  background-size: cover;
+  background-attachment: fixed; }
+
+.title {
+  font-family: "Pacifico", cursive;
+  color: white;
+  font-size: 50pt;
+  transition: .5s; }
+
+.title:hover {
+  color: rgba(92, 171, 224, 0.9); }
+
+.create {
+  font-family: "Pacifico", cursive;
+  font-size: 30pt;
+  color: black;
+  display: inline-block; }
+
+.opaque {
+  width: 500px;
+  background-color: rgba(8, 8, 7, 0.62);
+  justify-content: center; }
+
+.tripmaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.center {
+  display: flex;
+  flex-direction: column; }
+
+.delete {
+  border: none;
+  background-color: transparent; }
+
+/*# sourceMappingURL=style.css.map */

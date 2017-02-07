@@ -1,7 +1,56 @@
-body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-  background-color: red;
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+$font : 'Pacifico', cursive;
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+}
 
-a
-  color: #00B7FF
+body{
+  background-image: url('images/groupbg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.title {
+font-family: $font;
+color: white;
+font-size: 50pt;
+transition: .5s;
+}
+
+.title:hover {
+  color: rgba(92, 171, 224, 0.9);
+}
+
+.create {
+  font-family: $font;
+  font-size: 30pt;
+  color: black;
+  display: inline-block;
+}
+
+.opaque {
+width: 500px;
+  background-color: rgba(8, 8, 7, 0.62);
+    justify-content: center;
+}
+
+.tripmaker {
+  @include flex;
+    align-items: center;
+}
+
+.center {
+@include flex;
+}
+
+.delete {
+border: none;
+background-color: rgba(0, 0, 0, 0);
+}
+
+.tripname {
+
+
+}

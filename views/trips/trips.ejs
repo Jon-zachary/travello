@@ -3,21 +3,31 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-  <ul>
+     <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+
+     <a class="title ">Travello</a>
+     <div class="tripmaker">
+      <a href="trips/new" class="create">Create a trip</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
+
+
+
+<div class="opaque">
+  <ul class="center">
   <% trips.forEach(function(trips) { %>
-    <div>
-    <a href="<%= `itinerary/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
-      <%= trips.description%>
-        <form  action="<%= `/trips/${trips.id}/?_method=DELETE` %>" method="POST">
-            <button>X</button>
-        </form>
-        <a href= " <%= `trips/${trips.id}/edit`%>  ">edit</a>
-    </li>
+    <div >
+    <a class="tripname" href="<%= `itinerary/trip/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
+      <p class="descrip"><%= trips.description%></p>
     </div>
   <% }) %>
   </ul>
-  <a href="trips/new">Create a new trip</a>
+</div>
+</div>
   </body>
 </html>

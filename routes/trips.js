@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req,res,next) {
-  res.render('trips/new',{title:'New Trip'});
+  res.render('trips/newtrips',{title:'New Trip'});
 });
 
 
