@@ -1,42 +1,113 @@
-/*
-Error: Invalid CSS after "...b2e8366a35b7792": expected "{", was "}"
-        on line 96 of style.scss
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Pacifico");
+#tripbody {
+  background-image: url("images/groupbg.jpg");
+  background-size: cover;
+  background-attachment: fixed; }
 
-91:   color:black;
-96: }
+#itinerarybody {
+  background-image: url("images/beach12bg.jpg");
+  background-size: cover; }
 
-Backtrace:
-style.scss:96
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:665:in `block'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:658:in `ruleset'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Users/student_29/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...b2e8366a35b7792\": expected \"{\", was \"}\"\A         on line 96 of style.scss\A \A 91:   color:black;\A 92: <<<<<<< HEAD\A 93: \A 94: =======\A 95: >>>>>>> 84cb5086fd5fa385015faedcbb2e8366a35b7792\A 96: }"; }
+.title {
+  font-family: "Pacifico", cursive;
+  color: white;
+  font-size: 50pt;
+  transition: .5s; }
+
+.title:hover {
+  color: rgba(92, 171, 224, 0.9); }
+
+.create {
+  font-family: "Lato";
+  font-size: 30pt;
+  color: black;
+  display: inline-block;
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  transition: 1s; }
+
+.create:hover {
+  box-shadow: 10px 10px 10px #888888; }
+
+.center {
+  display: flex;
+  justify-content: flex-end; }
+
+.opaque {
+  width: 90%;
+  border-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.32);
+  overflow: scroll; }
+
+.holder {
+  margin-left: 5em;
+  font-family: "Lato";
+  font-size: 15pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.text {
+  text-align: center; }
+
+.tripmaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.container {
+  border-bottom: 1px solid black;
+  margin: 20px;
+  text-align: center; }
+  .container .tripname {
+    color: black;
+    font-family: "Lato";
+    font-size: 20pt;
+    transition: 0.5s; }
+  .container p {
+    font-family: courier; }
+
+.tripname:hover {
+  color: rgba(89, 156, 243, 0.98); }
+
+.delete {
+  border: none;
+  background-color: transparent; }
+
+#itintitle {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+  color: black; }
+
+.itinform {
+  font-family: "Lato";
+  margin-left: 25em; }
+  .itinform label {
+    font-size: 20pt;
+    color: black;
+    text-align: center; }
+    .itinform label textarea {
+      width: 50%;
+      display: block;
+      border: 1px solid #9e9e9e;
+      height: 7em;
+      background-color: rgba(255, 255, 255, 0.32); }
+
+.itineraryitem {
+  border-bottom: solid black 1px;
+  height: 200px;
+  width: 30em;
+  padding: 10px;
+  word-wrap: break-word;
+  overflow-x: hidden; }
+
+.icons {
+  display: flex;
+  flex-direction: row; }
+  .icons .trash {
+    color: red; }
+  .icons .edit {
+    color: black; }
+
+/*# sourceMappingURL=style.css.map */
