@@ -1,7 +1,8 @@
 <% include ../partials/head.ejs %>
-  <body>
-    <main>
-      <div class="container">
+  <body id="loginBody">
+    <main class="loginMain">
+      <div class="loginContainer">
+       <h1 class="travello">Travello</h1>
         <form action="/auth/login" method="post">
           <div>
             <label>Username:</label>
@@ -12,10 +13,11 @@
             <input type="password" name="password"/>
           </div>
           <div>
-            <input type="submit" value="Log In"/>
+            <input class="btn waves-effect waves-light red" type="submit" value="Log In"/>
           </div>
         </form>
       </div>
     </main>
-  </body>
+  <% include ../partials/footer %>
+</body>
 </html>

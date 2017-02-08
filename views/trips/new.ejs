@@ -2,42 +2,30 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn" href="#">New Trip</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
+  <body id="newtrip">
       <h4>Create a Trip</h4>
-      <p>
-        <form action="/trips" method="POST">
-          <div>
-            <label>Trip Name:</label>
-            <input type="text" name="tripname"/>
+    <div class="row">
+      <form  class="col s12" action="/trips" method="POST">
+        <div class="row">
+          <div class="input-field col s6">
+              <label>Trip Name:</label>
+              <input type="text" name="tripname"/>
+            </div>
+            <div class="input-field col s6">
+              <label>Trip Password:</label>
+              <input type="password" name="password"/>
+            </div>
+            <div class="input-field col s12">
+              <label>Description:</label>
+              <input type="text" name="description"/>
+            </div>
           </div>
-          <div>
-            <label>Trip Password:</label>
-            <input type="password" name="password"/>
-          </div>
-          <div>
-            <label>Description:</label>
-            <input type="text" name="description"/>
-          </div>
-          <button type="submit">Submit New Trip</button>
-        </form>
-      </p>
+        </div>
+          <button  class="btn waves-effect waves-light red" type="submit">Submit New Trip</button>
+      </form>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-
-
-
-
-
+    <% include ../partials/footer %>
   </body>
 </html>
