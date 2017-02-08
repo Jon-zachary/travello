@@ -23,7 +23,7 @@
 ![First white board session](whiteboard1_tables.jpg "1st whiteboard")
 ![Second white board session](whiteboard2_tables.jpg "2nd whiteboard")
 ![UX session](UX.jpg "UX meeting for Travello")
-![Travello](homepage_img.png "Travello")
+
 
 Technologies:
 Node.js, Express.js, Passport, Postgres, Sequelize, Javascript, jQuery, EJS, CSS, SASS, Materialize
