@@ -7,24 +7,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
 <body id="tripbody">
-     <a class="title ">Travello</a>
-     <div class="tripmaker">
-      <a href="trips/new" class="create" >Create a trip</a>
+  <a class="title ">Travello</a>
+  <div class="tripmaker">
+    <a href="trips/new" class="create" >Create a trip</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
       </ul>
-
-
-
-<div class="opaque">
-  <ul class="center">
-  <% trips.forEach(function(trips) { %>
-    <div class="container">
-    <a class="tripname" href="<%= `itinerary/trip/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
-      <p class="descrip"><%= trips.description%></p>
-    </div>
-  <% }) %>
-  </ul>
-</div>
+      <div class="opaque">
+        <ul>
+          <% trips.forEach(function(trips) { %>
+            <div class="container">
+              <a class="tripname" href="<%= `itinerary/trip/${trips.id}`%>"><%= `${trips.tripname}:`%></a>
+              <p class="descrip"><%= trips.description%></p>
+            </div>
+          <% }) %>
+        </ul>
+      </div>
 </div>
   </body>
 </html>

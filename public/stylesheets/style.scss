@@ -1,96 +1,229 @@
-
+@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Pacifico");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Pacifico");
 @mixin flex {
-  display: flex;
-  flex-direction: column;
-}
-$border:  2px solid rgba(0, 0, 0, 0.47);
-$font : 'Pacifico', cursive;
-$bluefont:rgba(89, 156, 243, 0.98);
-
-
-#tripbody{
-  background-image: url('images/groupbg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
-#itinerarybody{
-background-image: url('images/beach12bg.jpg');
-background-size: cover;
+$border: 2px solid rgba(0,0,0, .47);
+$font: 'Pacifico', cursive;
+$bluefont:rgba(89,156, 243,0.98);
+$courier: 'Lato';
+
+
+#tripbody {
+    background-image: url('images/groupbg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#itinerarybody {
+    background-image: url('images/beach12bg.jpg');
+    background-size: cover;
 }
 
 .title {
-font-family: $font;
-color: white;
-font-size: 50pt;
-transition: .5s;
+    font-family: $font;
+    color: white;
+    font-size: 50pt;
+    transition: .5s;
 }
 
 .title:hover {
-  color: rgba(92, 171, 224, 0.9);
+    color: rgba(92, 171, 224, 0.9);
 }
 
 .create {
-  font-family: $font;
-  font-size: 30pt;
-  color: black;
-  display: inline-block;
-padding: 5px;
-box-shadow: 5px 5px 5px #888888;
-transition: 1s;
+    font-family: $courier;
+    font-size: 30pt;
+    color: black;
+    display: inline-block;
+    padding: 5px;
+    box-shadow: 5px 5px 5px #888888;
+    transition: 1s;
 }
 
-.create:hover{
-  box-shadow: 10px 10px 10px #888888;
+.create:hover {
+    box-shadow: 10px 10px 10px #888888;
+}
+.center{
+display: flex;
+justify-content: flex-end;
 }
 
 .opaque {
-width: 90%;
-border-radius: 10%;
-  background-color: rgba(255, 255, 255, 0.32);
-    justify-content: center;
-}
+    width: 90%;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.32);
+    overflow: scroll;
+  }
 
-.tripmaker {
+.holder {
+  margin-left: 5em;
+  font-family:$courier;
+  font-size: 15pt;
   @include flex;
     align-items: center;
 }
+.text{
+  text-align: center;
+}
 
-.center {
-@include flex;
+.tripmaker {
+    @include flex;
+    align-items: center;
 }
 
 .container {
- border-bottom: 1px solid black;
- .tripname {
-    color: black;
-    font-family: courier, bold oblique;
-    font-size: 20pt;
-    transition: .5s
-
-  }
-  p{
-    font-family: courier;
-
-  }
-}
-.tripname:hover{
-color: $bluefont;
+    border-bottom: 1px solid black;
+    margin: 20px;
+    text-align: center;
+    .tripname {
+        color: black;
+        font-family: $courier;
+        font-size: 20pt;
+        transition: .5s
+    }
+    p {
+        font-family: $courier;
+    }
 }
 
+.tripname:hover {
+    color: $bluefont;
+}
 
 .delete {
-border: none;
-background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
 }
-#itintitle {
-  text-align: center;
-  font-family: $font;
-  color:black;
-<<<<<<< HEAD
 
-=======
->>>>>>> 84cb5086fd5fa385015faedcbb2e8366a35b7792
+#itintitle {
+    text-align: center;
+    font-family: $font;
+    color: black;
 }
+
+.itinform {
+    font-family: $courier;
+    margin-left: 25em;
+      label {
+          font-size: 20pt;
+          color: black;
+          text-align: center;
+              textarea {
+                  width: 50%;
+                  display: block;
+                  border: 1px solid #9e9e9e;
+                  height: 7em;
+                  background-color: rgba(255, 255, 255, 0.32);
+        }
+    }
+}
+
+.itineraryitem{
+border-bottom: solid black 1px;
+height: 200px;
+width: 30em;
+ padding: 10px;
+word-wrap: break-word;
+overflow-x: hidden;
+}
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  .trash{
+color: red;
+
+  }
+  .edit {
+    color: black;
+
+  }
+}
+
+
+ #landing_pg {
+  font: 25px "Lato";
+  max-width: 800px;
+  color: #E24E42;
+}
+#landing_pg{
+  padding: 50px;
+  background-image:url("../images/travello_header.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+a{
+  color:#E24E42;
+}
+//Logo
+.travello{
+  font-family:'Pacifico';
+  font-weight:700px;
+  color:#E24E42;
+}
+//Register and login
+input.btn{
+  margin:0 5px;
+  width:2em;
+  height:5em;
+  font: 15px "Lato";
+  color:white;
+}
+//login button on index
+#login{
+  width:128px;
+}
+.container4Register, .loginContainer{
+  padding-top: 100px;
+}
+
+
+
+#registerBody{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0) 0%,rgba(255,255,255,1) 65%),
+    url("../images/Friends_Beach.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    //register will have a transparent bg img.
+}
+#registerBody, #loginBody{
+display:flex;
+}
+#loginBody{
+  padding: 50px;
+  background-image:url('images/chinabg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  input {
+    color:white;
+  }
+}
+.registerMain, .loginMain{
+margin: 0 auto;
+}
+
+#newtrip{
+    padding: 50px;
+  background-image:url('images/camels.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
+}
+
