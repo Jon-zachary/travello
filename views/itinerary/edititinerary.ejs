@@ -2,17 +2,20 @@
 <html>
   <head>
     <title></title>
-
+<link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-
-<form method="POST" action="<%= `/itinerary/trip/${itinerary.id}/?_method=PUT` %>">
-<label> Edit your message
-  <input type ="text" name="content" placeholder="<%= itinerary.content%>">
-  <input type="hidden" name="tripid" value="<%= itinerary.tripid%>">
-</label>
-<button>Edit</button>
-</form>
-
-  </body>
-</html>
+  <body id="editbody">
+<h4>Edit your itinerary</h4>
+  <div class="row">
+      <form class="col s12" method="POST" action="<%= `/itinerary/trip/${itinerary.id}/?_method=PUT` %>">
+        <div class="row">
+          <div class="input-field col s6">
+             <input type ="text" name="content" placeholder="<%= itinerary.content%>">
+              <input type="hidden" name="tripid" value="<%= itinerary.tripid%>">
+          </div>
+        </div>
+        <button  class="btn waves-effect waves-light red" type="submit">Edit!</button>
+      </form>
+    </div>
+    </body>
+  </html>

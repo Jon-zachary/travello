@@ -67,7 +67,7 @@
     color: black;
     font-family: "Lato";
     font-size: 20pt;
-    transition: 0.5s; }
+    transition: .5s; }
   .container p {
     font-family: "Lato"; }
 
@@ -175,6 +175,15 @@ input.btn {
 #newtrip {
   padding: 50px;
   background-image: url("images/camels.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black; }
+
+#editbody {
+  background-image: url("../images/Travel-Wallpaper.jpg");
+  padding: 50px;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
