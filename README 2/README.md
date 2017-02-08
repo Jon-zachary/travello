@@ -19,7 +19,7 @@
 - Chat app
 
 
-![Balsalmiq wireframe](Original_Travello_With_Bonuses.pdf "Balsamiq Wireframe")
+![Balsalmiq wireframe](balsalmiq.png "Balsamiq Wireframe")
 ![First white board session](whiteboard1_tables.jpg "1st whiteboard")
 ![Second white board session](whiteboard2_tables.jpg "2nd whiteboard")
 ![UX session](UX.jpg "UX meeting for Travello")
