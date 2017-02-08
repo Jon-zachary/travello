@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-  </head>
-  <body>
+ <head>
 
-<form method="POST" action="<%= `/trips/${trips.id}/?_method=PUT` %>">
+   <title>Edit</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+ </head>
+ <body>
+
+<form method="POST" action="<%= `/itinerary/trip/${itinerary.id}/?_method=PUT` %>">
 <label> Edit your message
-  <input type ="text" name="content" placeholder="<%= trips.tripname%>">
+ <input type ="text" name="content" placeholder="<%= itinerary.content%>">
+ <input type="hidden" name="tripid" value="<%= itinerary.tripid%>">
 </label>
-<button>Edit</button>
+<button class="btn waves-effect waves-light red">Edit</button>
 </form>
-
-  </body>
+  <% include ../partials/footer %>
+ </body>
 </html>
